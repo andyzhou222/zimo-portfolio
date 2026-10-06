@@ -23,3 +23,9 @@
 .project-award--player .award-title{background:var(--blue);color:#fff}
 .project-award--player .award-competition{color:#c3c8d2}
 @media(max-width:480px){.project-award{flex-direction:column;gap:8px;margin-top:14px;padding-top:13px}.award-title{font-size:10px}.award-competition{font-size:10px}.project-award--player{margin-top:0;padding:11px 12px}}
+
+/* Preserve the supplied cover artwork and its lettering. */
+.project-image{aspect-ratio:16/9;background:#14161a}
+.project-image img{object-fit:contain}
+.project-button:hover .project-image img{transform:none}
+.project-index{left:auto;right:16px;top:16px;padding:5px 8px;border-radius:5px;background:#14161a99;backdrop-filter:blur(8px)}
