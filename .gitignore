@@ -1,0 +1,22 @@
+# 本机依赖、缓存和日志
+node_modules/
+.wrangler/
+.cloudflare-deploy/
+.cloudflare-deploy-cache/
+*.log
+__pycache__/
+
+# 托管元数据与本地环境配置
+.openai/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+
+# 临时文件和打包产物
+tmp/
+qa/
+*.tar.gz
+*.zip
+.DS_Store
+Thumbs.db

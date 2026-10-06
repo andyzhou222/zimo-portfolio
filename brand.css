@@ -1,0 +1,48 @@
+.brand {
+  gap: 12px;
+  flex-shrink: 0;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  transition: transform .35s var(--ease);
+}
+.brand:hover .brand-mark { transform: translateY(-2px); }
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.brand-lettering {
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: .12em;
+}
+.brand-signature {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .46em;
+  color: #70716d;
+}
+@media (max-width: 760px) {
+  .header { gap: 12px; }
+  .brand { gap: 9px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .brand-wordmark { gap: 6px; }
+  .brand-lettering { font-size: 18px; letter-spacing: .1em; }
+  .brand-signature { font-size: 7px; letter-spacing: .38em; }
+}
+@media (max-width: 360px) {
+  .header { gap: 8px; }
+  .header-actions { gap: 8px; }
+  .brand { gap: 7px; }
+  .brand-mark { width: 29px; height: 29px; }
+  .brand-lettering { font-size: 16px; }
+  .brand-signature { font-size: 6px; }
+  .contact-pill { padding: 10px; gap: 5px; }
+  .contact-pill .status-dot { display: none; }
+}
