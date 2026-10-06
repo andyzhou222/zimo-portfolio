@@ -7,6 +7,20 @@
   const player = document.querySelector('#player-video');
   let returnFocus = null;
 
+  function createAward(project, inPlayer = false) {
+    if (!project.award) return null;
+    const award = document.createElement('div');
+    award.className = `project-award${inPlayer ? ' project-award--player' : ''}`;
+    const title = document.createElement('span');
+    title.className = 'award-title';
+    title.textContent = project.award.title;
+    const competition = document.createElement('span');
+    competition.className = 'award-competition';
+    competition.textContent = project.award.competition;
+    award.append(title, competition);
+    return award;
+  }
+
   projects.forEach((project, index) => {
     const article = document.createElement('article');
     article.className = 'project-card reveal';
@@ -49,6 +63,8 @@
     label.textContent = project.tags.join(' / ');
     meta.append(text, label);
     button.append(visual, meta);
+    const award = createAward(project);
+    if (award) button.append(award);
     article.append(button);
     grid.append(article);
   });
@@ -74,6 +90,11 @@
     document.querySelector('#player-category').textContent = project.label;
     document.querySelector('#player-description').textContent = project.description;
     document.querySelector('#player-duration').textContent = project.duration;
+    const awardSlot = document.querySelector('#player-award-slot');
+    awardSlot.replaceChildren();
+    const award = createAward(project, true);
+    awardSlot.hidden = !award;
+    if (award) awardSlot.append(award);
     document.querySelector('#player-error').hidden = true;
     player.poster = project.poster;
     player.src = project.video;
